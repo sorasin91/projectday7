@@ -11,7 +11,7 @@ function App() {
 
   // Function to validate email using Regex
   const isEmailValid = (email) => {
-  // Regex pattern for basic email validation
+    // Regex pattern for basic email validation
     const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return pattern.test(email);
   };
@@ -37,6 +37,7 @@ function App() {
       <center>
         <form>
           <table>
+            {/* Input fields for name and email */}
             <tr>
               <td><label>Name:</label></td>
               <td><input type='text' placeholder='Enter your name' value={newName} onChange={(e) => setnewName(e.target.value)} /></td>
@@ -47,16 +48,18 @@ function App() {
             </tr>
           </table>
           <br />
+          {/* Button to submit the form */}
           <button type='button' onClick={AddData}>Submit</button>
         </form>
       </center>
 
-
+      {/* Table to display the entered data */}
       <table>
         <tr>
           <th>Name</th>
           <th>Email</th>
         </tr>
+        {/* Mapping and displaying the data */}
         {data.map((item) => (
           <tr>
             <th>{item.name}</th>
